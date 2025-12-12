@@ -1,0 +1,22 @@
+# Fichiers générés par Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Fichiers IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# Fichiers OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Fichiers de configuration locaux
+application-local.yml
+application-local.properties

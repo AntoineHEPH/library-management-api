@@ -1,0 +1,144 @@
+{
+  "info": {
+    "name": "Library Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "c1f3c7c4-0000-0000-0000-library-api"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8080" }
+  ],
+  "item": [
+    {
+      "name": "Authors",
+      "item": [
+        { "name": "List Authors", "request": { "method": "GET", "url": "{{base_url}}/api/authors" } },
+        { "name": "Get Author by ID", "request": { "method": "GET", "url": "{{base_url}}/api/authors/1" } },
+        {
+          "name": "Create Author (ADMIN)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": "{{base_url}}/api/authors",
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Isaac Asimov\"\n}" }
+          }
+        },
+        {
+          "name": "Update Author (ADMIN)",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": "{{base_url}}/api/authors/1",
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"I. Asimov\"\n}" }
+          }
+        },
+        { "name": "Delete Author (ADMIN)", "request": { "method": "DELETE", "url": "{{base_url}}/api/authors/1" } }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        { "name": "List Categories", "request": { "method": "GET", "url": "{{base_url}}/api/categories" } },
+        { "name": "Get Category by ID", "request": { "method": "GET", "url": "{{base_url}}/api/categories/1" } },
+        {
+          "name": "Create Category (ADMIN)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": "{{base_url}}/api/categories",
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Science-Fiction\"\n}" }
+          }
+        },
+        {
+          "name": "Update Category (ADMIN)",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": "{{base_url}}/api/categories/1",
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"SF\"\n}" }
+          }
+        },
+        { "name": "Delete Category (ADMIN)", "request": { "method": "DELETE", "url": "{{base_url}}/api/categories/1" } }
+      ]
+    },
+    {
+      "name": "Members",
+      "item": [
+        { "name": "List Members", "request": { "method": "GET", "url": "{{base_url}}/api/members" } },
+        { "name": "Get Member by ID", "request": { "method": "GET", "url": "{{base_url}}/api/members/1" } },
+        {
+          "name": "Create Member (ADMIN)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": "{{base_url}}/api/members",
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Alice\",\n  \"email\": \"alice@example.com\"\n}" }
+          }
+        },
+        {
+          "name": "Update Member (ADMIN)",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": "{{base_url}}/api/members/1",
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Alice B.\",\n  \"email\": \"alice.b@example.com\"\n}" }
+          }
+        },
+        { "name": "Delete Member (ADMIN)", "request": { "method": "DELETE", "url": "{{base_url}}/api/members/1" } }
+      ]
+    },
+    {
+      "name": "Books",
+      "item": [
+        { "name": "List Books", "request": { "method": "GET", "url": "{{base_url}}/api/books" } },
+        { "name": "Get Book by ID", "request": { "method": "GET", "url": "{{base_url}}/api/books/1" } },
+        { "name": "Search Available Books", "request": { "method": "GET", "url": "{{base_url}}/api/books/search?available=true" } },
+        {
+          "name": "Create Book (ADMIN)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": "{{base_url}}/api/books",
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"Foundation\",\n  \"isbn\": \"9780553293357\",\n  \"totalCopies\": 5,\n  \"availableCopies\": 5,\n  \"authorId\": 1,\n  \"categoryIds\": [1]\n}" }
+          }
+        },
+        {
+          "name": "Update Book (ADMIN)",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": "{{base_url}}/api/books/1",
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"Foundation (Rev)\",\n  \"isbn\": \"9780553293357\",\n  \"totalCopies\": 6,\n  \"availableCopies\": 6,\n  \"authorId\": 1,\n  \"categoryIds\": [1]\n}" }
+          }
+        },
+        { "name": "Delete Book (ADMIN)", "request": { "method": "DELETE", "url": "{{base_url}}/api/books/1" } }
+      ]
+    },
+    {
+      "name": "Loans",
+      "item": [
+        { "name": "List Loans", "request": { "method": "GET", "url": "{{base_url}}/api/loans" } },
+        { "name": "List Active Loans", "request": { "method": "GET", "url": "{{base_url}}/api/loans/active" } },
+        { "name": "Get Loan by ID", "request": { "method": "GET", "url": "{{base_url}}/api/loans/1" } },
+        {
+          "name": "Create Loan (ADMIN)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": "{{base_url}}/api/loans",
+            "body": { "mode": "raw", "raw": "{\n  \"bookId\": 1,\n  \"memberId\": 1,\n  \"loanDate\": \"2025-12-12\",\n  \"dueDate\": \"2025-12-26\"\n}" }
+          }
+        },
+        {
+          "name": "Return Loan (ADMIN)",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "url": "{{base_url}}/api/loans/1/return",
+            "body": { "mode": "raw", "raw": "{}" }
+          }
+        },
+        { "name": "Delete Loan (ADMIN)", "request": { "method": "DELETE", "url": "{{base_url}}/api/loans/1" } }
+      ]
+    }
+  ]
+}

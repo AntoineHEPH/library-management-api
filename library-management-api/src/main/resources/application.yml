@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: library-management-api
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5436/library
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    open-in-view: true   # garder la session ouverte pour éviter LazyInitialization lors de la sérialisation
+    hibernate:
+      ddl-auto: update  # Crée/met à jour les tables automatiquement
+    show-sql: true      # Affiche les requêtes SQL (utile pour le debug)
+    properties:
+      "[hibernate.format_sql]": true  # Formate le SQL affiché
+    defer-datasource-initialization: true  # Laisser data.sql s'exécuter après la création du schéma
+
+  sql:
+    init:
+      mode: always          # Exécuter data.sql même sur base non embarquée
+
+server:
+  port: 8081
