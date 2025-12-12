@@ -62,7 +62,7 @@ Avec Maven Wrapper (Linux/macOS) :
 ./mvnw spring-boot:run
 ```
 
-L'API sera accessible sur : `http://localhost:8080`
+L'API sera accessible sur : `http://localhost:8081`
 
 Démarrage via JAR (optionnel) :
 ```powershell
@@ -102,7 +102,7 @@ Exemple d’appel avec Basic Auth (PowerShell) :
 ```powershell
 $cred = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes("admin:admin"))
 $headers = @{ Authorization = "Basic $cred"; "Content-Type"="application/json" }
-Invoke-RestMethod -Uri "http://localhost:8080/api/authors" -Method Post -Headers $headers -Body '{ "name":"Isaac Asimov" }'
+Invoke-RestMethod -Uri "http://localhost:8081/api/authors" -Method Post -Headers $headers -Body '{ "name":"Isaac Asimov" }'
 ```
 
 ## 📚 Documentation API
