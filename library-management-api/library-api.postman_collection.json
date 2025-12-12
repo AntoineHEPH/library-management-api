@@ -5,7 +5,7 @@
     "_postman_id": "c1f3c7c4-0000-0000-0000-library-api"
   },
   "variable": [
-    { "key": "base_url", "value": "http://localhost:8080" }
+    { "key": "base_url", "value": "http://localhost:8081" }
   ],
   "item": [
     {
@@ -19,7 +19,7 @@
             "method": "POST",
             "header": [ { "key": "Content-Type", "value": "application/json" } ],
             "url": "{{base_url}}/api/authors",
-            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Isaac Asimov\"\n}" }
+            "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Isaac\",\n  \"lastName\": \"Asimov\",\n  \"nationality\": \"American\",\n  \"birthYear\": 1920\n}" }
           }
         },
         {
@@ -28,7 +28,7 @@
             "method": "PUT",
             "header": [ { "key": "Content-Type", "value": "application/json" } ],
             "url": "{{base_url}}/api/authors/1",
-            "body": { "mode": "raw", "raw": "{\n  \"name\": \"I. Asimov\"\n}" }
+            "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Victor\",\n  \"lastName\": \"Hugo\",\n  \"nationality\": \"French\",\n  \"birthYear\": 1802\n}" }
           }
         },
         { "name": "Delete Author (ADMIN)", "request": { "method": "DELETE", "url": "{{base_url}}/api/authors/1" } }
